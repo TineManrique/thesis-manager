@@ -1,0 +1,121 @@
+<head>
+    <title>Student List</title>
+    <link type="text/css" rel="stylesheet" href="/stylesheets/main.css" />
+      <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+<style>
+body{
+    margin, padding: 0;
+}
+h1{
+    text-align: center;
+}
+
+.navbar-default .navbar-nav > li > a:hover, .navbar-default .navbar-nav > li > a:focus {
+    color: black;  /*Sets the text hover color on navbar*/
+}
+
+.navbar-default .navbar-nav > .active > a, .navbar-default .navbar-nav > .active >   
+ a:hover, .navbar-default .navbar-nav > .active > a:focus {
+color: white; /*BACKGROUND color for active*/
+background-color: #0279FF;
+}
+
+.navbar-default {
+    background-color: #0AADE8;
+    border-color: #030033;
+}
+
+.nav > li > a:hover,
+.nav > li > a:focus {
+    text-decoration: none;
+}
+
+.navbar-default .navbar-nav > li > a {
+    color: white; /*Change active text color here*/
+}
+.navbar-header .navbar-brand{
+    color: white;
+}
+.navbar-header .navbar-brand a:hover{
+    color: white;
+}
+.form-horizontal{
+    margin-top: 2%;
+    margin-bottom: 2%;
+    margin-left: 28%;
+}
+.td{
+    text-align: center; 
+    padding-bottom: 3%
+}
+.table{
+	margin-top: 2%;
+	margin-left: 28%;
+	width:45%;
+}
+.editdel{
+	margin-left: 46%; margin-top: 4%
+}
+.editdel span{
+	margin-right: 4%;
+	font-size: 20px
+}
+.center{
+	text-align: center;
+}
+</style>
+</head>
+<body>
+<nav class="navbar navbar-default">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="#">CoE-DBMS-17</a>
+    </div>
+    <div>
+      <ul class="nav navbar-nav">
+        <li><a href="/student/create">Create Student</a></li>
+        <li class="active"><a href="/student/list">Student List</a></li>  
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<div class="page-header">
+<h1>Student Page</h1>
+</div>
+<div class="panel panel-default">
+<div class="panel-body">
+	<table class="table table-bordered">
+ 	<tr>
+ 		<td><b>First Name:</b></td>
+ 		<td class="center">{{ student.first_name }}</td>
+ 	</tr>
+ 	<tr>
+ 		<td><b>Last Name:</b></td>
+ 		<td class="center">{{ student.last_name }}</td>
+ 	</tr>
+ 	<tr>
+ 		<td><b>Gender:</b></td>
+ 		<td class="center">{{ student.gender }}</td>
+ 	</tr>
+ 	<tr>
+ 		<td><b>Age:</b></td>
+ 		<td class="center">{{ student.age }}</td>
+ 	</tr>
+ 	<tr>
+ 		<td><b>Address:</b></td>
+ 		<td class="center">{{ student.address }}</td>
+ 	</tr>
+ 	
+    </table>
+    <div class="editdel">
+    <span><a href="/student/edit/{{student.key.id()}}">Edit</a></span>
+    <span><a href="/student/delete/{{student.key.id()}}">Delete</a></span>
+   	</div>
+</div>
+</div>	
+</body>
+</html>

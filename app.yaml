@@ -1,0 +1,26 @@
+# app.yaml = application config file
+application: coe-dbms-17
+version: 1
+runtime: python27
+api_version: 1
+threadsafe: true
+
+handlers:
+- url: /.*
+  script: main.app
+
+- url: /favicon\.ico
+  static_files: favicon.ico
+  upload: favicon\.ico
+
+- url: /img
+  static_dir: /img
+
+- url: /stylesheets
+  static_dir: stylesheets
+
+libraries:
+- name: webapp2
+  version: latest
+- name: jinja2
+  version: latest

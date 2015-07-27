@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link type="text/css" rel="stylesheet" href="/stylesheets/main.css" />
+      <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+<style>
+body{
+    margin, padding: 0;
+}
+h1{
+    text-align: center;
+}
+
+.navbar-default .navbar-nav > li > a:hover, .navbar-default .navbar-nav > li > a:focus {
+    color: black;  /*Sets the text hover color on navbar*/
+}
+
+.navbar-default .navbar-nav > .active > a, .navbar-default .navbar-nav > .active >   
+ a:hover, .navbar-default .navbar-nav > .active > a:focus {
+color: white; /*BACKGROUND color for active*/
+background-color: #0279FF;
+}
+
+.navbar-default {
+    background-color: #0AADE8;
+    border-color: #030033;
+}
+
+.nav > li > a:hover,
+.nav > li > a:focus {
+    text-decoration: none;
+}
+
+.navbar-default .navbar-nav > li > a {
+    color: white; /*Change active text color here*/
+}
+.navbar-header .navbar-brand{
+    color: white;
+}
+.navbar-header .navbar-brand a:hover{
+    color: white;
+}
+.form-horizontal{
+    margin-top: 2%;
+    margin-bottom: 2%;
+    margin-left: 28%;
+}
+</style>
+</head>
+<body>
+<nav class="navbar navbar-default">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="#">CoE-DBMS-17</a>
+    </div>
+    <div>
+      <ul class="nav navbar-nav">
+        <li><a href="/student/create">Create Student</a></li>
+        <li><a href="/student/list">Student List</a></li>  
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<div class="page-header">
+<h1>Edit Student Record</h1>
+</div>
+<div class="panel panel-default">
+<div class="panel-body">
+<form class="form-horizontal" role="form" action='/student/edit/{{student.key.id()}}' method='post'>
+    <div class="form-group">
+        <label class="col-lg-2 control-label" for="">First Name</label>
+        <div class="col-lg-4">
+            <input type='text' class="form-control" name='first_name' placeholder='first name' value="{{student.first_name}}" required autofocus />
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="col-lg-2 control-label" for="">Last Name</label>
+        <div class="col-lg-4">
+            <input type='text' class="form-control" name='last_name' placeholder='last name' value="{{student.last_name}}" required autofocus/>
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="col-lg-2 control-label" for="">Gender</label>
+        <div class="col-lg-4">
+            <select name='gender' value="{{student.gender}}" class="form-control" required autofocus>
+                <option>-- Select --</option>
+                <option>Female</option>
+                <option>Male</option>
+            </select> 
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="col-lg-2 control-label" for="">Age</label>
+        <div class="col-lg-4">
+            <input type='text' class="form-control" name='age' placeholder='age' value="{{student.age}}" required autofocus/>
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label class="col-lg-2 control-label" for="">Address</label>
+        <div class="col-lg-4">
+            <input type='text' class="form-control" name='address' placeholder='Location' value="{{student.address}}" required autofocus/>
+        </div>
+    </div>
+    <div class="form-group">
+        <div class="col-lg-offset-3 col-lg-4">
+            <button type='submit' class="btn btn-primary">SAVE</button>
+        </div>
+    </div>
+</form>
+</div>
+</div>
+</body>
+</html>
+
+
